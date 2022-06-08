@@ -1,6 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoClient = require('mongodb').MongoClient;
+const cors = require('cors');
+
+
 
 const INDEX_PORT = 3001;
 const INDEX_HOST = 'localhost';
@@ -10,7 +13,7 @@ const MONGO_COLLECTION_PLAYLISTS = 'playlists';
 const MONGO_COLLECTION_USUARIOS = 'usuarios';
 
 const index = express(); index.use(bodyParser.json())
-
+index.use(cors());
 //POST
  index.post('/playlists', (req, res) => {
   mongoClient.connect(MONGO_HOST, (err, client) => {
