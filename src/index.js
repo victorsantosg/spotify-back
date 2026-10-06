@@ -7,7 +7,7 @@ const cors = require('cors');
 
 const INDEX_PORT = 3001;
 const INDEX_HOST = 'localhost';
-const MONGO_HOST = "mongodb+srv://spotify:***REMOVED***@cluster0.zi19iqm.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_HOST = process.env.MONGODB_URI; // ex.: mongodb+srv://<user>:<senha>@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority
 const MONGO_DB = 'Spotify';
 const MONGO_COLLECTION_PLAYLISTS = 'playlists';
 const MONGO_COLLECTION_USUARIOS = 'usuarios';
